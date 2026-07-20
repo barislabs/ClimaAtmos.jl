@@ -4,6 +4,15 @@ ClimaAtmos.jl Release Notes
 main
 ----
 
+- ![][badge-💥breaking] `AtmosModel` is now built on a grid and owns the
+  parameters and case setup. `AtmosSimulation` wraps a model and carries only
+  run control:
+
+  ```julia
+  model = AtmosModel(grid; params, setup, microphysics_model = ..., ...)
+  sim   = AtmosSimulation(model; dt, t_end, ...)
+  ```
+
 0.42.8
 -------
 - [#4779](https://github.com/CliMA/ClimaAtmos.jl/pull/4779) ![][badge-🐛bugfix] ![][badge-🔥behavioralΔ] Fit the SGS quadrature Lagrange multiplier to the discrete quadrature rule instead of the continuous Gaussian, so the reconstructed condensate mass hits its target. Also correct the 0-moment energy sink for the covariance of `dq_tot/dt` and `e_tot`.
