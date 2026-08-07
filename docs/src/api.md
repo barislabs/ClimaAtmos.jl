@@ -278,7 +278,6 @@ ClimaAtmos.AbstractGravityWave
 ClimaAtmos.NonOrographicGravityWave
 ClimaAtmos.OrographicGravityWave
 ClimaAtmos.FullOrographicGravityWave
-ClimaAtmos.LinearOrographicGravityWave
 ```
 
 ### Forcings
